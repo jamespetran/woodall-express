@@ -18,3 +18,9 @@ kind of like $('onReady');
 
 2. run in terminal:
       $ npm install express --save
+            this adds approximately 1 million files to the folder browser
+            also changes package.json
+            and adds package-lock.json
+
+3. add a ".git-ignore" file
+      add the line "node_modules/" to stop all those node modules from getting uploaded to github
