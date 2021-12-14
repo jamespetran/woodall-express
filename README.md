@@ -29,3 +29,19 @@ don't git push for now...
 
 
 now i can git push
+
+4. create server folder and server.js inside of it
+
+
+5.  1st line of server.js:    
+            `const express = require('express');`
+            `const app = express();`
+            
+            const port = 5000;
+            app.listen(port, () => {
+                  console.log(`IM LISTENING!!!!`); //this is usually a console log!!!!!!
+            });
+
+6. access localhost:5000 to access the server
+
+7. to kill the server: ^C or killall -9 node
