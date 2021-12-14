@@ -45,3 +45,16 @@ now i can git push
 6. access localhost:5000 to access the server
 
 7. to kill the server: ^C or killall -9 node
+
+
+
+
+
+
+
+
+
+things a webserver has: 
+Path : / (file tree or the stuff after .com)
+
+Method: GET
