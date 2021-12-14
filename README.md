@@ -11,9 +11,10 @@ its like 20 lines and if you forget something it just won't work...
 kind of like $('onReady');
 
 1. run in terminal:
-      npm init --yes
+      $ npm init --yes
             #####npm is a tool that helps us download other libraries
             this creates this file: package.json 👈up on the left side
             "javascript object notation"
 
-2. 
+2. run in terminal:
+      $ npm install express --save
