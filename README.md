@@ -10,6 +10,8 @@ its like 20 lines and if you forget something it just won't work...
 
 kind of like $('onReady');
 
+don't git push for now...
+
 1. run in terminal:
       $ npm init --yes
             #####npm is a tool that helps us download other libraries
@@ -24,3 +26,6 @@ kind of like $('onReady');
 
 3. add a ".git-ignore" file
       add the line "node_modules/" to stop all those node modules from getting uploaded to github
+
+
+now i can git push
