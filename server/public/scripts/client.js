@@ -22,6 +22,14 @@ function onReady() {
       // arguments: method, path (aka url)
       // e.g. GET /comments
       // gets arguments as an object
+      $('#refresh').on('click', refresh);
+      $('#commentForm').on('submit', onAddComment);
+
+}
+
+console.log('js');
+
+function refresh() {
       let ajaxOptions = {
             method: 'GET',
             url: '/comments'
@@ -35,10 +43,7 @@ function onReady() {
 
       console.log(`made a network request but
       noone has time to wait for that`);
-
 }
-
-console.log('js');
 
 function render(state) {
       console.log('in render', state);
@@ -48,5 +53,29 @@ function render(state) {
             $('#comments').append(`<p class="author">AUTHOR: ${comment.author}</p>`);
             $('#comments').append(`<p class="message">MESSAGE: ${comment.message}</p>`);
       }
+
+}
+
+function onAddComment(event) {
+      //dont reload the page
+      event.preventDefault();
+
+      console.log('in add comment');
+
+      //prepare message object to post to the server
+      let comment = {
+            author: $('#authorInput').val(),
+            message: $('#messageInput').val()
+      };
+      console.log(comment);
+
+      $.ajax({
+            method: 'POST',
+            url: '/comments',
+            data: comment
+      })
+            .then((response) => {
+                  console.log('POST Response', response);
+            })
 
 }

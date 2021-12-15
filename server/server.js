@@ -3,6 +3,7 @@
  */
 
 const express = require('express');
+const bodyParser= require('body-parser');
 
 //express is a function!!
 
@@ -15,6 +16,11 @@ const app = express();
 // GET another-one.html
 // and any other files inside of public folder
 app.use(express.static('server/public')) //this is how the public directory is linked up and served up to the web browser
+
+//don't forget body parser!
+// https://i.imgur.com/qs0INo4.jpg
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //handle requests for GET /space-jams
 //setup a GET /space-jams endpoint
@@ -47,9 +53,20 @@ app.get('/comments', (req,res) => {
                   message: 'same'
             }
       ])
+
 });
+
+app.post('/comments', (req,res) => {
+      console.log('in POST /comments', req.body);
+
+
+      res.sendStatus(201);
+})
+
+
+
+
 const port = 5000;
 app.listen(port, () => {
       console.log(`IM LISTENING!!!!`); //this is usually a console log!!!!!!
 }); 
-

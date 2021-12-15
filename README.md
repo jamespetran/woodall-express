@@ -69,5 +69,30 @@ client.js talks to server.js and back and forth
 
 data lives on the server
 
-is $.ajax a jquery function?
+is $.ajax a jquery function? <= with the dollar sign, yes this is using jQuery
 
+npm install moment - time stuff - confusing and idk how to make it work
+npm install nodemon - auto restarts node server when i change anything - super useful for testing and stuff
+
+the other method that a webserver has is POST
+
+request document:
+( =
+      url = /comments
+      method = post
+      body = {
+            author: 'andre',
+            message: 'not enough jams'
+      }
+= )
+
+this is submitted to server.js
+and push()-ed to the array
+
+$.ajax({
+      url: "/comments",
+      method: "POST",
+      data: { message }
+})
+
+npm install body-parser
