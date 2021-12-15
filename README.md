@@ -67,3 +67,5 @@ databases
 
 client.js talks to server.js and back and forth
 
+data lives on the server
+
