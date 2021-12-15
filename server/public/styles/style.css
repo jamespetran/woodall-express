@@ -1,3 +1,9 @@
 body {
       background-color: lightsalmon;
 }
+.message {
+      background-color: lime;
+}
+.author {
+      color:white;
+}

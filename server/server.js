@@ -32,10 +32,19 @@ app.get('/space-jams', (req,res) => {
 
 
 app.get('/comments', (req,res) => {
+      console.log('in GET /comments');
       res.send([
             {
                   author:'edan',
                   message:'new space jams sux 1996 ftw'
+            },
+            {
+                  author: 'james',
+                  message: 'im hungry'
+            },
+            {     
+                  author: 'person',
+                  message: 'same'
             }
       ])
 });

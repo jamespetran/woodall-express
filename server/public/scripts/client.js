@@ -27,8 +27,26 @@ function onReady() {
             url: '/comments'
       }
 
-      $.ajax(ajaxOptions);
+      $.ajax(ajaxOptions)
+            .then((response) => {
+                  console.log('ajax request complete', response);
+                  render(response);
+            });
+
+      console.log(`made a network request but
+      noone has time to wait for that`);
 
 }
 
 console.log('js');
+
+function render(state) {
+      console.log('in render', state);
+      $('#comments').empty();
+      // d(o some jquery to render comments (state) to the DOM
+      for (comment of state) {
+            $('#comments').append(`<p class="author">AUTHOR: ${comment.author}</p>`);
+            $('#comments').append(`<p class="message">MESSAGE: ${comment.message}</p>`);
+      }
+
+}
