@@ -43,6 +43,9 @@ function refresh() {
 
       console.log(`made a network request but
       noone has time to wait for that`);
+      $('#messageInput').val('');
+      $('#authorInput').val('');
+
 }
 
 function render(state) {
@@ -50,8 +53,8 @@ function render(state) {
       $('#comments').empty();
       // d(o some jquery to render comments (state) to the DOM
       for (comment of state) {
-            $('#comments').append(`<p class="author">AUTHOR: ${comment.author}</p>`);
-            $('#comments').append(`<p class="message">MESSAGE: ${comment.message}</p>`);
+            $('#comments').append(`<div class="commentBox"> <p class="author">AUTHOR: ${comment.author}</p>
+                  <p class="message">MESSAGE: ${comment.message}</p> </div>`);
       }
 
 }
@@ -72,10 +75,18 @@ function onAddComment(event) {
       $.ajax({
             method: 'POST',
             url: '/comments',
+            //send the comment to the server in the request "body"
+            //this will become req.body on server.js
             data: comment
+
       })
             .then((response) => {
                   console.log('POST Response', response);
+
+                  //refresh 
+                  //as in, get comments from server and render to DOM
+                  refresh();
+                  
             })
 
 }

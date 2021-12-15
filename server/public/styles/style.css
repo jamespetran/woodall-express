@@ -7,3 +7,10 @@ body {
 .author {
       color:white;
 }
+.commentBox {
+      border: black;
+      border-radius: 5%;
+      border-width: 2px;
+      border-style: solid;
+      margin: 10px;
+}     

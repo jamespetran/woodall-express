@@ -36,30 +36,35 @@ app.get('/space-jams', (req,res) => {
 
 });
 
+let comments = [
+      {
+            author:'edan',
+            message:'new space jams sux 1996 ftw'
+      },
+      {
+            author: 'james',
+            message: 'im hungry'
+      },
+      {     
+            author: 'person',
+            message: 'same'
+      }
+];
 
 app.get('/comments', (req,res) => {
       console.log('in GET /comments');
-      res.send([
-            {
-                  author:'edan',
-                  message:'new space jams sux 1996 ftw'
-            },
-            {
-                  author: 'james',
-                  message: 'im hungry'
-            },
-            {     
-                  author: 'person',
-                  message: 'same'
-            }
-      ])
+      res.send(comments);
 
 });
 
+//this is posting a comment
 app.post('/comments', (req,res) => {
       console.log('in POST /comments', req.body);
 
+      //add the comment to our array (save it)
+      comments.push(req.body);
 
+      //send back a thumbs up
       res.sendStatus(201);
 })
 
