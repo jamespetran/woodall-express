@@ -1,4 +1,4 @@
-# woodall-express
+# woodall-express-NOTES
 woodall week 8 tuesday / day 02
 
 express things
@@ -58,3 +58,12 @@ things a webserver has:
 Path : / (file tree or the stuff after .com)
 
 Method: GET
+
+
+
+inside server.js there is code that makes the website interactive
+
+databases
+
+client.js talks to server.js and back and forth
+
