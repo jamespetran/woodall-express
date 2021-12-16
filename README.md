@@ -96,3 +96,22 @@ $.ajax({
 })
 
 npm install body-parser
+
+body parser takes an ugly body text like 
+      ?author=andre&message=more%20jams%20plz
+and turns it into 
+      {author: `andre`, message: `more jams plz`}
+
+
+GET AND POST:
+GET
+POST
+
+These are from the users POV
+post: 
+      user:       i want to post comments to the server
+      server:     ok ty for your comment (status code 201) (201 means "created")
+get: 
+      user:       i want to retrieve the list of comments
+      server:     ok heres your comments
+
